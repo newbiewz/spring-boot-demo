@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.newbiewz.learn.mapper.OrderMapper">
+
+    <resultMap id="OrderMap" type="Order">
+        <result column="id" property="id"/>
+        <result column="order_id" property="orderId"/>
+        <result column="item_id" property="itemId"/>
+        <result column="sku_id" property="skuId"/>
+        <result column="buyer_id" property="buyerId"/>
+        <result column="seller_id" property="sellerId"/>
+        <result column="create_time" property="createTime"/>
+        <result column="address" property="address"/>
+    </resultMap>
+
+    <select id="queryById" resultMap="OrderMap">
+        select * from `order` where id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="Order" keyProperty="id" keyColumn="id" useGeneratedKeys="true">
+        INSERT INTO `order`(
+            id,
+            order_id,
+            item_id,
+            sku_id,
+            buyer_id,
+            seller_id,
+            create_time,
+            address
+        ) VALUES (
+            #{id},
+            #{orderId},
+            #{itemId},
+            #{skuId},
+            #{buyerId},
+            #{sellerId},
+            #{createTime},
+            #{address}
+        )
+    </insert>
+</mapper>
