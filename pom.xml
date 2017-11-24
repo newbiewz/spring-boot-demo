@@ -9,6 +9,7 @@
 	<modules>
 		<module>mybatis</module>
 		<module>common</module>
+		<module>mvc</module>
 	</modules>
 	<packaging>pom</packaging>
 

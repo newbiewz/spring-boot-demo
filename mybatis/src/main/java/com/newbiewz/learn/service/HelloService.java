@@ -1,6 +1,6 @@
 package com.newbiewz.learn.service;
 
-import com.newbiewz.learn.SystemServiceLog;
+import com.newbiewz.learn.monitor.annotation.SystemServiceLog;
 
 public interface HelloService {
     @SystemServiceLog
